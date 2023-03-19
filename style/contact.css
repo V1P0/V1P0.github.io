@@ -1,0 +1,123 @@
+@import url('./theme.css');
+
+.contact {
+  padding: 5rem 0;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__content--image {
+  flex: 1;
+}
+
+.contact__content {
+  flex: 2;
+}
+
+.contact header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+.contact__header--social {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  background-color: var(--main-bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: var(--main-border-radius);
+  margin: auto;
+}
+
+form input {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+form button {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-color);
+  color: var(--main-bg-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+
+form button:active {
+  transform: translateY(2px);
+}
+
+form input:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact__content--image {
+    display: none;
+  }
+
+  .contact__content {
+    flex: 1;
+  }
+
+  .contact header {
+    width: 100%;
+  }
+
+  form {
+    width: 80%;
+    margin: auto;
+  }
+}

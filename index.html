@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/home.css" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <nav class="menu">
+      <ul>
+        <li><a href="/www_lista1/index">Home</a></li>
+        <li><a href="/www_lista1/about">About</a></li>
+        <li><a href="/www_lista1/projects">Projects</a></li>
+        <li><a href="/www_lista1/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="hero">
+        <h1 class="hero__text--big">Mateusz Jończak</h1>
+        <p class="hero__text--small">
+          I'm a third year student of Computer Science at the Wrocław University of Science and Technology.
+        </p>
+        <a class="button-primary" href="/wwwl1/about">About me</a>
+      </section>
+      <section class="container intresting">
+        <header class="intresting__header">
+          <h2 class="intresting__header--title">WHAT IM INTRESETD IN</h2>
+        </header>
+        <div class="grid">  
+          <div class="intresting__content">
+            <div class="icon ic--workflow"></div>
+            <h3 class="intresting__content--title">Artificial Inteligence</h3>
+            <p class="intresting__content--text">
+              Artificial inteligence is the simulation of human intelligence processes by machines.
+            </p>
+          </div>
+          <div class="intresting__content">
+            <div class="icon ic--flexibility"></div>
+            <h3 class="intresting__content--title">Reinforcement Learning</h3>
+            <p class="intresting__content--text">
+              Reinforcement Learning is a branch of Machine Learning where we have an actor who takes actions in an enviroment and gets rewards based on them. The actors task is to maximize it's cumulative reward.
+            </p>
+          </div>
+          <div class="intresting__content">
+            <div class="icon ic--user-friendly"></div>
+            <h3 class="intresting__content--title">Metaheuristics</h3>
+            <p class="intresting__content--text">
+              Metaheuristics is a family of algorithms who's job isn't to find the best possible solution but to improve an existing one.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="code container">
+        <h2>My Code Example</h2>
+        <pre><code>
+          public class NaturalKiller implements Killer{
+
+            boolean first;
+        
+            @Override
+            public void kill(Population population) {
+                first = true;
+                Random rand = new Random();
+                long bc = population.getBestSpecimen().getCost();
+                int size = population.getSpecimens().size();
+                int threshold = (int)(0.7*size);
+                List<Specimen> toDelete = new ArrayList<>();
+                int count = 0;
+                for(Specimen specimen: population.getSpecimens()){
+                    double prob = deathFunction(bc, specimen.getCost(), specimen.getAge(), size, population.getExpectedSize());
+                    if(prob > rand.nextDouble()){
+                        toDelete.add(specimen);
+                        count++;
+                        if(count > threshold){
+                            break;
+                        }
+                    }
+                }
+                population.getSpecimens().removeAll(toDelete);
+            }
+        
+            private double deathFunction(long bc, long c, long age, int size, int expectedSize){
+                double bias = 0.1;
+                if(c == bc && first){
+                    first = false;
+                    return 0;
+                }
+                double val1 = costFunction(bc, c);
+                double val2 = ageFunction(age);
+                //System.out.println(val1*10 + " ; " + val2);
+                return Math.tanh((val1*10 + val2 + bias))*(size/(double)expectedSize);
+            }
+        
+            private double costFunction(long bc, long c){
+                return (c-bc)/(double)bc;
+            }
+        
+            private double ageFunction(long age){
+                double a = 0.000444043;
+                double b = -0.0271067;
+                double c = 0.326663;
+                return a*age*age+b*age+c;
+            }
+        }
+        </code></pre>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Mateusz Jończak.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+@import url('./theme.css');
+
+.intresting {
+  padding: 5rem 0;
+}
+
+.intresting__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intresting__header--text {
+  max-width: 500px;
+  margin: 1rem auto;
+}
+
+.intresting__content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.intresting__content--title {
+  font-weight: 700;
+  color: var(--main-text-color);
+  margin-top: 1rem;
+}
+
+/* MEDIA */
+@media screen and (max-width: 768px) {
+  .intresting__content--text {
+    max-width: 80%;
+    margin: 1rem auto;
+  }
+
+  .intresting__content--title {
+    font-size: 1.5rem;
+    max-width: fit-content;
+    margin: 1rem auto;
+  }
+
+  .intresting__header--text {
+    text-align: center;
+    max-width: fit-content;
+    margin: 1rem auto;
+  }
+  .intresting__content {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  .intresting__header {
+    margin-bottom: 1rem;
+  }
+}
+
+.code {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.code h2 {
+  text-align: center;
+}
