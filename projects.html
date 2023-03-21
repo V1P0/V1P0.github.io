@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/about.css" />
+    <link rel="stylesheet" href="style/theme.css" />
     <title>My projects</title>
   </head>
   <body>
@@ -85,6 +85,60 @@
             </a>
           </div>
         </article>
+      </section>
+      <section class="code container">
+        <h2>My Code Example</h2>
+        <pre><code>
+          public class NaturalKiller implements Killer{
+
+            boolean first;
+        
+            @Override
+            public void kill(Population population) {
+                first = true;
+                Random rand = new Random();
+                long bc = population.getBestSpecimen().getCost();
+                int size = population.getSpecimens().size();
+                int threshold = (int)(0.7*size);
+                List<Specimen> toDelete = new ArrayList<>();
+                int count = 0;
+                for(Specimen specimen: population.getSpecimens()){
+                    double prob = deathFunction(bc, specimen.getCost(), specimen.getAge(), size, population.getExpectedSize());
+                    if(prob > rand.nextDouble()){
+                        toDelete.add(specimen);
+                        count++;
+                        if(count > threshold){
+                            break;
+                        }
+                    }
+                }
+                population.getSpecimens().removeAll(toDelete);
+            }
+        
+            private double deathFunction(long bc, long c, long age, int size, int expectedSize){
+                double bias = 0.1;
+                if(c == bc && first){
+                    first = false;
+                    return 0;
+                }
+                double val1 = costFunction(bc, c);
+                double val2 = ageFunction(age);
+
+                return Math.tanh((val1*10 + val2 + bias))*(size/(double)expectedSize);
+            }
+        
+            private double costFunction(long bc, long c){
+                return (c-bc)/(double)bc;
+            }
+        
+            private double ageFunction(long age){
+                double a = 0.000444043;
+                double b = -0.0271067;
+                double c = 0.326663;
+                return a*age*age+b*age+c;
+            }
+        }
+        </code></pre>
       </section>
     </main>
     <footer>
