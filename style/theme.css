@@ -284,22 +284,13 @@ a:hover {
   background-image: url(../assets/icons/right-arrow.svg);
 }
 
-/* Foooter */
 footer {
   background-color: var(--secondary-bg-color);
   padding: 1rem 0;
   text-align: center;
 }
 
-/* MEDIA */
-@media screen and (max-width: 768px) {
-  .hero__text--small {
-    max-width: 100%;
-  }
-  .hero__text--big {
-    text-align: left;
-  }
-}
+
 
 .intresting {
   padding: 5rem 0;
@@ -324,33 +315,6 @@ footer {
   font-weight: 700;
   color: var(--main-text-color);
   margin-top: 1rem;
-}
-
-/* MEDIA */
-@media screen and (max-width: 768px) {
-  .intresting__content--text {
-    max-width: 80%;
-    margin: 1rem auto;
-  }
-
-  .intresting__content--title {
-    font-size: 1.5rem;
-    max-width: fit-content;
-    margin: 1rem auto;
-  }
-
-  .intresting__header--text {
-    text-align: center;
-    max-width: fit-content;
-    margin: 1rem auto;
-  }
-  .intresting__content {
-    max-width: 375px;
-    margin: 0 auto;
-  }
-  .intresting__header {
-    margin-bottom: 1rem;
-  }
 }
 
 .code {
@@ -463,28 +427,6 @@ form input:focus {
   outline: none;
 }
 
-@media screen and (max-width: 768px) {
-  .contact {
-    flex-direction: column;
-  }
-
-  .contact__content--image {
-    display: none;
-  }
-
-  .contact__content {
-    flex: 1;
-  }
-
-  .contact header {
-    width: 100%;
-  }
-
-  form {
-    width: 80%;
-    margin: auto;
-  }
-}
 
 .about {
   padding: 5rem 0;
@@ -597,6 +539,56 @@ form input:focus {
 }
 
 @media screen and (max-width: 768px) {
+  .hero__text--small {
+    max-width: 100%;
+  }
+  .hero__text--big {
+    text-align: left;
+  }
+  .intresting__content--text {
+    max-width: 80%;
+    margin: 1rem auto;
+  }
+
+  .intresting__content--title {
+    font-size: 1.5rem;
+    max-width: fit-content;
+    margin: 1rem auto;
+  }
+
+  .intresting__header--text {
+    text-align: center;
+    max-width: fit-content;
+    margin: 1rem auto;
+  }
+  .intresting__content {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  .intresting__header {
+    margin-bottom: 1rem;
+  }
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact__content--image {
+    display: none;
+  }
+
+  .contact__content {
+    flex: 1;
+  }
+
+  .contact header {
+    width: 100%;
+  }
+
+  form {
+    width: 80%;
+    margin: auto;
+  }
+
   .about__content--image {
     flex: 100%;
   }
