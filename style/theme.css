@@ -127,7 +127,9 @@ a:hover {
 .menu ul {
   display: flex;
   justify-content: right;
-
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   list-style: none;
 }
 
@@ -322,6 +324,7 @@ footer {
   padding: 2rem;
   border-radius: 5px;
   font-size: 1.2rem;
+  overflow: scroll;
 }
 
 .code h2 {
