@@ -1,8 +1,8 @@
 :root {
-  --main-bg-color: #ffffff;
+  --main-bg-color: #fbfcfe;
   --secondary-bg-color: #f1e4ff;
 
-  --main-color: #8c30f5;
+  --main-color: #53904f;
   --main-text-color: #18191f;
 
   --extra-color: #d5fafc;
@@ -237,7 +237,7 @@ a:hover {
   font-weight: 700;
   color: var(--main-text-color);
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 23rem;
 }
 
 .hero__text--small {
