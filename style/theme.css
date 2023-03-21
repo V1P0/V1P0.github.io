@@ -261,17 +261,6 @@ a:hover {
   background-repeat: no-repeat;
 }
 
-.ic--workflow {
-  background-image: url(../assets/icons/icon-workflow.svg);
-}
-
-.ic--flexibility {
-  background-image: url(../assets/icons/02.svg);
-}
-
-.ic--user-friendly {
-  background-image: url(../assets/icons/03.svg);
-}
 .ic--multiple-layouts {
   background-image: url(../assets/icons/04.svg);
 }
@@ -497,49 +486,6 @@ form input:focus {
   line-height: 18px;
 }
 
-.statistics {
-  display: flex;
-  background-color: var(--extra-color);
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
-  padding: 2rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.statistics--header {
-  flex: 1;
-}
-
-.statistics--content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-auto-flow: row;
-  grid-gap: 1rem;
-  flex: 2;
-}
-
-.statistics--content--box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.statistics--content--box--icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.statistics--content--box--icon div {
-  margin: 0;
-  padding: 0;
-}
-
-.statistics--content--box--text {
-  text-align: left;
-}
 
 @media screen and (max-width: 768px) {
   .hero__text--small {
@@ -604,25 +550,8 @@ form input:focus {
     max-width: 100%;
   }
 
-  .statistics {
-    flex-direction: column;
-  }
-
-  .statistics--content {
-    flex: 1;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .odd {
     flex-direction: column-reverse;
   }
 
-  .statistics--header {
-    text-align: left;
-    margin: 1rem auto;
-  }
-  .statistics--content--box {
-    justify-content: left;
-  }
 }
