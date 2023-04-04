@@ -1,0 +1,420 @@
+@use 'sass:map'
+$main-bg-color:#fbfcfe
+$secondary-bg-color: #f1e4ff
+$main-color:#53904f
+$main-text-color:#18191f
+$extra-color:#d5fafc
+$font-sizes: (h1: 3rem, h2: 2.5rem, h3: 2rem, h4: 1.5rem, h5: 1.25rem, h6: 1rem, p: 1rem, small:0.875rem, extra-small:0.75rem)
+$main-font:'Roboto', sans-serif
+$main-border-radius:8px
+$main-box-shadow:0 0 10px rgba(0, 0, 0, 0.1)
+$main-box-shadow-hover:0 0 10px rgba(0, 0, 0, 0.2)
+$main-box-shadow-active:0 0 10px rgba(0, 0, 0, 0.3)
+$desktop-width:1440px
+$tablet-width:768px
+$mobile-width:375px
+
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  background-color: $main-bg-color
+  color: $main-text-color
+  font-family: $main-font
+  font-size: map.get($font-sizes, p)
+  line-height: 1.5
+
+h1, h2, h3, h4, h5, h6
+  font-family: $main-font
+  font-weight: 700
+  color: $main-text-color
+
+@each $name, $size in $font-sizes
+  #{$name}
+    font-size: $size
+
+a
+  text-decoration: none
+  color: $main-text-color
+
+  &:hover
+    color: $main-color
+
+/* Layout
+
+.container
+  max-width: $desktop-width
+  margin: 0 auto
+  padding: 0 1rem
+  overflow: hidden
+
+.grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+  grid-auto-flow: row
+  grid-gap: 1rem
+
+/* Navigation
+
+.menu
+  background-color: $main-bg-color
+  padding: 1rem 0
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+
+  ul
+    display: flex
+    justify-content: right
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    list-style: none
+
+    li
+      padding: 0.5rem 1rem
+      border-radius: $main-border-radius
+
+      a
+        text-decoration: none
+        color: $main-text-color
+        padding: 1rem
+        font-weight: bold
+        transition: all 0.3s ease
+
+        &:hover
+          background-color: $main-color
+          color: $main-bg-color
+
+/* Global Components
+
+.button-primary
+  background-color: $main-color
+  color: $main-bg-color
+  padding: 0.8rem 2rem
+  border-radius: $main-border-radius
+  border: none
+  font-weight: bold
+  transition: all 0.3s ease
+
+  &:hover
+    background-color: $extra-color
+    color: $main-text-color
+
+.button-text
+  background-color: transparent
+  color: $main-color
+  padding: 0.8rem 2rem
+  border-radius: $main-border-radius
+  border: none
+  font-weight: bold
+  transition: all 0.3s ease
+
+  &:hover
+    background-color: $main-color
+    color: $main-bg-color
+
+.button-icon
+  background-color: transparent
+  color: $main-color
+  padding: 0.8rem 2rem
+  border-radius: $main-border-radius
+  border: none
+  font-weight: bold
+  transition: all 0.3s ease
+
+  &:hover
+    text-decoration: underline
+
+  .icon
+    transition: all 0.3s ease
+    transform: translateX(-0.5rem)
+
+  &:hover .icon
+    transform: translateX(100%)
+
+.button-outline
+  background-color: transparent
+  color: $main-color
+  padding: 0.8rem 2rem
+  border-radius: $main-border-radius
+  border: 2px solid $main-color
+  font-weight: bold
+  transition: all 0.3s ease
+
+  &:hover
+    background-color: $main-color
+    color: $main-bg-color
+
+.hero
+  background-image: url(../assets/images/Background.jpg)
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  min-height: 100vh
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  flex-direction: column
+  padding: 5rem
+  max-width: 100vw
+
+.hero__text--big
+  font-weight: 700
+  color: $main-text-color
+  text-align: center
+  margin-top: 23rem
+
+.hero__text--small
+  font-weight: 400
+  color: $main-text-color
+  text-align: left
+  margin-top: 2rem
+  margin-bottom: 3rem
+  font-size: 1.5rem
+  max-width: 50%
+
+/* ICONS
+
+.icon
+  width: 2rem
+  height: 2rem
+  margin: auto
+  background-size: contain
+  background-repeat: no-repeat
+
+@mixin make_image($name)
+  background-image: url(../assets/icons/#{$name}.svg)
+  
+@for $i from 1 through 3
+  .ic--#{$i}
+    @include make_image(#{"0" + $i})
+
+
+
+.ic--arrow-right
+  @include make_image(right-arrow)
+
+footer
+  background-color: $secondary-bg-color
+  padding: 1rem 0
+  text-align: center
+
+.intresting
+  padding: 5rem 0
+
+.intresting__header
+  text-align: center
+  margin-bottom: 3rem
+
+.intresting__header--text
+  max-width: 500px
+  margin: 1rem auto
+
+.intresting__content
+  padding: 1rem
+  text-align: center
+
+.intresting__content--title
+  font-weight: 700
+  color: $main-text-color
+  margin-top: 1rem
+
+.code
+  background-color: #f5f5f5
+  padding: 2rem
+  border-radius: 5px
+  font-size: 1.2rem
+  overflow: scroll
+
+  h2
+    text-align: center
+
+.contact
+  padding: 5rem 0
+  width: 100%
+  min-height: 80vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+.contact__content--image
+  flex: 1
+
+.contact__content
+  flex: 2
+
+@mixin flex_all_center_column()
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+.contact header
+  @include flex_all_center_column()
+  padding: 1rem
+  position: relative
+  width: 80%
+  margin: auto
+
+.contact__header--social
+  margin: 2rem 0
+  display: flex
+  justify-content: space-around
+  width: 80%
+
+form
+  @include flex_all_center_column()
+  width: 80%
+  background-color: $main-bg-color
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+  padding: 2rem
+  border-radius: $main-border-radius
+  margin: auto
+
+  input, textarea
+    width: 100%
+    padding: 1rem
+    margin: 1rem 0
+    border: none
+    border-bottom: 2px solid $main-color
+    background-color: transparent
+    color: $main-text-color
+    font-size: 1.5rem
+    font-weight: 400
+
+  button
+    width: 100%
+    padding: 1rem
+    margin: 1rem 0
+    border: none
+    border-radius: $main-border-radius
+    background-color: $main-color
+    color: $main-bg-color
+    font-size: 1.5rem
+    font-weight: 400
+    transition: all 0.3s ease
+    cursor: pointer
+
+    &:hover
+      background-color: $main-bg-color
+      color: $main-color
+
+    &:active
+      transform: translateY(2px)
+
+  input:focus
+    outline: none
+
+.about
+  padding: 5rem 0
+
+.about__content
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  padding: 1rem
+
+.about__content--image
+  flex: 50%
+
+  img
+    width: 100%
+    height: 100%
+    padding: 10px
+    border-radius: 25px
+    object-fit: cover
+
+.about__content-texts
+  flex: 50%
+  padding-left: 10px
+
+.about__content-texts--title
+  font-weight: 700
+  color: $main-text-color
+  margin-bottom: 1.5rem
+
+.about__content-texts--text
+  font-weight: 400
+  color: $main-text-color
+  margin-bottom: 1.5rem
+  max-width: 500px
+
+.button-secondary__icon div
+  margin: 0
+  padding: 0
+  margin-left: 1rem
+  width: 24px
+  height: 24px
+
+.about__content-texts--button
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  padding-left: 0 !important
+
+.section-label
+  color: #2ec5ce
+  letter-spacing: 2px
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 14px
+  line-height: 18px
+
+@media screen and (max-width: 768px)
+  .hero__text--small
+    max-width: 100%
+
+  .hero__text--big
+    text-align: left
+
+  .intresting__content--text
+    max-width: 80%
+    margin: 1rem auto
+
+  .intresting__content--title
+    font-size: 1.5rem
+    max-width: fit-content
+    margin: 1rem auto
+
+  .intresting__header--text
+    text-align: center
+    max-width: fit-content
+    margin: 1rem auto
+
+  .intresting__content
+    max-width: 375px
+    margin: 0 auto
+
+  .intresting__header
+    margin-bottom: 1rem
+
+  .contact
+    flex-direction: column
+
+  .contact__content--image
+    display: none
+
+  .contact__content
+    flex: 1
+
+  .contact header
+    width: 100%
+
+  form
+    width: 80%
+    margin: auto
+
+  .about__content--image, .about__content-texts
+    flex: 100%
+
+  .about__content-texts--text
+    max-width: 100%
+
+  .odd
+    flex-direction: column-reverse
