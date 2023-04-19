@@ -1,1 +1,1 @@
-# wwwl1
+# Strona przygotowywana jako projek na studia z kursu "Nowoczesne technologie WWW"
