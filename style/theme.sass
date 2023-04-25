@@ -59,36 +59,84 @@ a
 
 /* Navigation
 
-.menu
+@mixin menuStyle 
   background-color: $main-bg-color
   padding: 1rem 0
-  position: fixed
+  position: right
   top: 0
   left: 0
-  width: 100%
 
-  ul
+  ul 
     display: flex
     justify-content: right
-    flex-direction: row
-    flex-wrap: wrap
     align-items: center
     list-style: none
 
-    li
+    li 
       padding: 0.5rem 1rem
       border-radius: $main-border-radius
 
-      a
+      &:hover 
+        background-color: $main-color
+        a 
+          color: $main-bg-color
+        
+      
+
+      a 
         text-decoration: none
         color: $main-text-color
         padding: 1rem
         font-weight: bold
         transition: all 0.3s ease
 
-        &:hover
-          background-color: $main-color
-          color: $main-bg-color
+      
+    
+  
+
+
+.menu.js 
+  @include menuStyle
+
+  @media (max-width: $tablet-width) 
+    .hamburger 
+      display: block
+    
+    .menu-list 
+      display: none
+    
+  
+
+  @media (min-width: $tablet-width) 
+    .hamburger 
+      display: none
+    
+    .menu-list 
+      display: flex
+    
+  
+
+  .hamburger 
+    z-index: 1000
+    cursor: pointer
+    transition: all 0.3s ease
+    padding: 1rem
+    border: none
+    background-color: transparent
+  
+
+  .is-active 
+    display: block
+  
+
+
+.menu.no-js 
+  @include menuStyle
+
+  .hamburger 
+    display: none
+  
+
 
 /* Global Components
 

@@ -78,36 +78,97 @@ a:hover {
 }
 
 /* Navigation */
-.menu {
+.menu.js {
   background-color: #fbfcfe;
   padding: 1rem 0;
-  position: fixed;
+  position: right;
   top: 0;
   left: 0;
-  width: 100%;
 }
-.menu ul {
+.menu.js ul {
   display: flex;
   justify-content: right;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   list-style: none;
 }
-.menu ul li {
+.menu.js ul li {
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
-.menu ul li a {
+.menu.js ul li:hover {
+  background-color: #53904f;
+}
+.menu.js ul li:hover a {
+  color: #fbfcfe;
+}
+.menu.js ul li a {
   text-decoration: none;
   color: #18191f;
   padding: 1rem;
   font-weight: bold;
   transition: all 0.3s ease;
 }
-.menu ul li a:hover {
+@media (max-width: 768px) {
+  .menu.js .hamburger {
+    display: block;
+    position: right;
+  }
+  .menu.js .menu-list {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .menu.js .hamburger {
+    display: none;
+  }
+  .menu.js .menu-list {
+    display: flex;
+  }
+}
+.menu.js .hamburger {
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+}
+.menu.js .is-active {
+  display: block;
+}
+
+.menu.no-js {
+  background-color: #fbfcfe;
+  padding: 1rem 0;
+  position: right;
+  top: 0;
+  left: 0;
+}
+.menu.no-js ul {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  list-style: none;
+}
+.menu.no-js ul li {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+.menu.no-js ul li:hover {
   background-color: #53904f;
+}
+.menu.no-js ul li:hover a {
   color: #fbfcfe;
+}
+.menu.no-js ul li a {
+  text-decoration: none;
+  color: #18191f;
+  padding: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.menu.no-js .hamburger {
+  display: none;
 }
 
 /* Global Components */
